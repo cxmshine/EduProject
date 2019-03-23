@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 @RequestMapping("user")
-public class UserController {
+public class UserController extends BaseController<User>{
     @Autowired
     private IUserService userService;
 
@@ -25,18 +25,18 @@ public class UserController {
         return null;
     }
 
-    @RequestMapping("manage")
+    @RequestMapping(MANAGE)
     public String manage(){
-        return "user/manage";
+        return MANAGE_PAGE;
     }
 
-    @RequestMapping("info")
+    @RequestMapping(INFO)
     public String info(){
-        return "user/info";
+        return INFO_PAGE;
     }
 
-    @RequestMapping("edit")
+    @RequestMapping(EDIT)
     public String edit(){
-        return "user/edit";
+        return EDIT_PAGE;
     }
 }
